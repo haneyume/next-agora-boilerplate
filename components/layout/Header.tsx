@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { FaGithub } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 import { AppContext } from '../utils/AppContext';
@@ -18,37 +17,19 @@ export const Header = () => {
             className="text-2xl text-gray-700 cursor-pointer"
             onClick={() => router.push('/')}
           >
-            next-firebase-boilerplate
+            next-agora-boilerplate
           </div>
 
           <div className="flex-1" />
-
-          <select
-            value={i18n.language}
-            onChange={(evt) => i18n.changeLanguage(evt.target.value)}
-          >
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
-            <option value="zhHant">繁體中文</option>
-            <option value="zhHans">简体中文</option>
-          </select>
-
-          <div
-            className="cursor-pointer"
-            onClick={() =>
-              window.open(
-                'https://github.com/haneyume/next-firebase-boilerplate',
-              )
-            }
-          >
-            <FaGithub className="text-2xl" />
-          </div>
 
           <div
             className="cursor-pointer"
             onClick={() => router.push('/account')}
           >
-            {appCtx.user?.email}
+            <img
+              className="w-8 h-8 bg-gray-100 rounded"
+              src={`https://avatars.dicebear.com/api/jdenticon/${appCtx.user?.uid}.svg`}
+            />
           </div>
         </div>
       </div>

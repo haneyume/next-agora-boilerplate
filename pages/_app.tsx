@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AppProvider>
       <Head>
-        <title>next-firebase-boilerplate</title>
+        <title>next-agora-boilerplate</title>
 
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

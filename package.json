@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@haneyume/ui-libs": "https://github.com/haneyume/ui-libs#47d6737555600779046b7ee9ec746906bad159a9",
+    "agora-access-token": "^2.0.4",
+    "agora-rtm-sdk": "^1.4.3-203",
     "axios": "^0.24.0",
     "clsx": "^1.1.1",
     "firebase": "^9.4.1",

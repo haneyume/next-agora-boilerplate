@@ -1,0 +1,6 @@
+@url=http://localhost:3000
+
+###
+
+# Get agora real-time messaging token
+GET {{url}}/api/rtm_token

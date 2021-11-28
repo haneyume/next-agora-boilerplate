@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
 import { AppContext } from '../utils/AppContext';
-import { LoginForm } from '../forms/LoginForm';
-import { SimpleForm } from '../forms/SimpleForm';
+
+import { QuickForm } from '@haneyume/ui-libs';
 
 export const LoginPage = () => {
   const appCtx = React.useContext(AppContext);
@@ -14,22 +14,16 @@ export const LoginPage = () => {
   return (
     <div className="container mx-auto px-5">
       <div className="w-full md:w-1/2 mx-auto">
-        <LoginForm />
-
-        <div className="h-10" />
-
-        <SimpleForm<{
-          name: number;
-          email: string;
-          password: string;
-        }>
+        <QuickForm<{ email: string; password: string }>
           properties={{
-            name: { type: 'date', placeholder: 'Please input name' },
             email: { type: 'email', required: true },
             password: { type: 'password', required: true },
           }}
           onSubmit={(data) => {
-            alert(JSON.stringify(data));
+            appCtx.loginWithEmail(data.email, data.password).catch((error) => {
+              appCtx.showNotification('Error', error.message);
+              alert(error.message);
+            });
           }}
         />
       </div>
